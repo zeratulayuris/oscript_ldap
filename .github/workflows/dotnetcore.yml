@@ -13,9 +13,9 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 2.2.108
-    - name: Download latest NuGet (cross-platform)
-      uses: olegtarasov/download-nuget@v1
+    - name: Setup NuGet.exe for use with actions
+      uses: NuGet/setup-nuget@v1.0.2
     - name: nuget restore
-      run: NuGet.exe restore packages.config -PackagesDirectory Packages  
+      run: nuget restore packages.config -PackagesDirectory Packages  
     - name: Build with dotnet
       run: dotnet build --configuration Release
