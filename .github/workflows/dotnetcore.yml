@@ -16,6 +16,6 @@ jobs:
     - name: Setup NuGet.exe for use with actions
       uses: NuGet/setup-nuget@v1.0.2
     - name: nuget restore
-      run: nuget restore packages.config -PackagesDirectory Packages  
+      run: nuget restore oscript-component/packages.config -PackagesDirectory Packages  
     - name: Build with dotnet
       run: dotnet build --configuration Release
